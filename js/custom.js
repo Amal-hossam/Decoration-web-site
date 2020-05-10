@@ -1,16 +1,29 @@
+//screeeeeeen load
+
+$(document).ready(function(){
+  $("#loadingScreen").delay(2000).fadeOut(1000,function(){
+    $("#deLoadingScreen").css("overflow","auto");
+  })
+  });
 // init Isotope
+
+$(window).on('load', function () {
 var $grid = $('.grid').isotope({
   // options
   itemSelector: '.grid .col-md-4',
   percentPosition: true,
+  stagger: 30
+
 
   
 });
+
 // filter items on button click
 $('.filter-button-group button').click( function() {
   var filterValue = $(this).attr('data-filter');
   $grid.isotope({ filter: filterValue });
 });
+   });
 
 //toggle menu for navbar
 $(document).ready(function(){
@@ -81,12 +94,7 @@ $("#btnUp").click(function(){
 
 $("body,html").animate({scrollTop:0},2000);
 });
-//screeeeeeen load
-$(document).ready(function(){
-$("#loadingScreen").delay(2000).fadeOut(1000,function(){
-  $("#deLoadingScreen").css("overflow","auto");
-})
-});
+
 
 // profile 
 /*$(function() {
